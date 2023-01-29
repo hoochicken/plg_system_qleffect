@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" version="1.0.1" group="system" method="upgrade">
     <name>PLG_SYSTEM_QLEFFECT</name>
-    <author>Ingo Holewczuk; Mareike Riegel</author>
-    <creationDate>2019</creationDate>
-    <copyright>Copyright (C) 2019 ql.de All rights reserved.</copyright>
+    <author>Mareike Riegel</author>
+    <creationDate>2023</creationDate>
+    <copyright>Copyright (C) 2023 ql.de All rights reserved.</copyright>
     <authorEmail>mareike.riegel@ql.de</authorEmail>
-    <authorUrl>http://www.ql.de/</authorUrl>
-    <version>1.0.1</version>
+    <authorUrl>http://ql.de/</authorUrl>
+    <version>1.0.0</version>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <description>PLG_SYSTEM_QLEFFECT_DESCRIPTION</description>
     <files>
         <filename plugin="qleffect">qleffect.php</filename>
         <filename plugin="qleffect">index.html</filename>
         <filename plugin="qleffect">license.txt</filename>
+        <folder plugin="qleffect">_jupdate</folder>
         <folder plugin="qleffect">css</folder>
         <folder plugin="qleffect">js</folder>
         <folder plugin="qleffect">language</folder>

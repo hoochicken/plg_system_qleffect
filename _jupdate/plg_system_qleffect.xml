@@ -1,0 +1,21 @@
+ <updates>
+	 <update>
+		<name>qleffect</name>
+		<client>site</client>
+		<type>plugin</type>
+		<folder>system</folder>
+		<element>qleffect</element>
+		<description>This plugin provides text effects for moving websites</description>
+		<infourl title="ql.de - Blackforest Software">https://ql.de</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/hoochicken/plg_system_qleffect/archive/refs/tags/v1.0.0.zip</downloadurl>
+		</downloads>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer>Dr. Mareike Riegel</maintainer>
+		<maintainerurl>http://ql.de</maintainerurl>
+		<section>Updates</section>
+		<targetplatform name="joomla" version="4.[0123456789]"/>
+	 </update>
+ </updates>
