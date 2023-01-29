@@ -7,6 +7,8 @@
  */
 
 //no direct access
+use Joomla\CMS\Factory;
+
 defined('_JEXEC') or die ('Restricted Access');
 
 jimport('joomla.plugin.plugin');
@@ -26,7 +28,16 @@ class plgSystemQleffect extends JPlugin
     {
         parent::__construct($subject, $config);
         $this->loadLanguage();
-        $this->includeScripts();
+        if ($this->isJoomla4(JVERSION)) $this->includeScripts();
+        else $this->includeScriptsJoomla3();
+    }
+
+    /**
+     *
+     */
+    public function isJoomla4($version)
+    {
+        return 4 <= $version;
     }
 
     /**
@@ -34,13 +45,24 @@ class plgSystemQleffect extends JPlugin
      */
     function includeScripts()
     {
+        $wam = Factory::getDocument()->getWebAssetManager();
+        if ((bool) $this->params->get('jquery', false)){
+            $wam->useScript('jquery');
+        }
+        $wam->registerAndUseScript('plg_system_qleffect', 'plg_system_qleffect/qleffect.js');
+        $wam->registerAndUseStyle( 'plg_system_qleffect', 'plg_system_qleffect/qleffect.css');
+    }
+
+    /**
+     *  method to get documents and scripts needed
+     */
+    function includeScriptsJoomla3()
+    {
         if (true === (bool) $this->params->get('jquery', false)){
             JHtml::_('jquery.framework');
         }
         JHtml::_('stylesheet', 'media/plg_system_qleffect/css/qleffect.css');
         JHtml::_('script', 'media/plg_system_qleffect/js/qleffect.js');
-        // $objDoc = JFactory::getDocument();
-        // $objDoc->addScriptDeclaration('var qlSiteOffset=' . $offset . ';');
     }
 
     /**
